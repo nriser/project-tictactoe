@@ -12,7 +12,18 @@ const signUp = (data) => {
   })
 } // an object we'll pass into as an ajax request
 
+const signIn = (data) => { // data object passed into  argument will be different from argument in above function
+  // console.log('inside signIn. data is', data) to check
+  console.log('data is', data) // to check to see what data gives us, structure
+  return $.ajax({
+    url: config.apiOrigin + '/sign-in',
+    method: 'POST', // has to be a string
+    data
+  })
+}
+
 module.exports = {
-  signUp
+  signUp,
+  signIn
 }
 // doesn't have to be arrows
