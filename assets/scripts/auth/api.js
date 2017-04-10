@@ -22,8 +22,21 @@ const signIn = (data) => { // data object passed into  argument will be differen
   })
 }
 
+const changePassword = (data) => {
+  console.log('inside ChangePassword, data is :', data)
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/' + store.user.id,
+    method: 'PATCH', // has to be a string
+    headers: { // headers always plural by default // look at curl for this
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  changePassword
 }
 // doesn't have to be arrows

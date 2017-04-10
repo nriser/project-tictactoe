@@ -34,6 +34,15 @@
       </fieldset>
     </form>
 
+    <form id="change-password">
+      <fieldset>
+        <legend>Change password!</legend>
+        <input type="password" name="passwords[old]" placeholder="old password"> <!-- [email] is the key of credentials object. name matters. Our object is made to look like what we see in sign-uo.sh  -->
+        <input type="password" name="passwords[new]" placeholder="new password"> <!-- what will our object look like at this point? see notes (1)-->
+        <input type="submit" name="submit" value="Change password!">
+      </fieldset>
+    </form>
+
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
