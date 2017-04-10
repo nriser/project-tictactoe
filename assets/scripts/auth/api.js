@@ -34,9 +34,21 @@ const changePassword = (data) => {
   })
 }
 
+const signOut = (data) => {
+  console.log('inside signOut, data is :')
+  return $.ajax({
+    url: config.apiOrigin + '/sign-out/' + store.user.id,
+    method: 'DELETE', // has to be a string
+    headers: { // headers always plural by default // look at curl for this
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  changePassword
+  changePassword,
+  signOut
 }
 // doesn't have to be arrows

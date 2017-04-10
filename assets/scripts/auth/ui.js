@@ -27,11 +27,22 @@ const changePasswordSuccess = (response) => {
 const changePasswordFailure = (error) =>
   console.error(error)
 
+const signOutSuccess = () => {
+  console.log('signOut success ran. and nothing was returned')
+  store.user = null // only have one person signed in in a givne session, one browser
+}
+
+const signOutFailure = (error) => {
+  console.log('error on sign out is: ', error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
+  signOutSuccess,
+  signOutFailure,
   changePasswordSuccess,
   changePasswordFailure
 }
