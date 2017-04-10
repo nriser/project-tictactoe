@@ -14,6 +14,17 @@
     <body class="container-fluid">
       <h1>Example</h1>
 
+    <form id="sign-up">
+      <fieldset>
+        <legend>Sign up!</legend>
+        <input type="text" name="credentials[email]" placeholder="email">
+        <!-- name matters. Our object is made to look like what we see in sign-uo.sh  -->
+        <input type="password" name="credentials[password]" placeholder="password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="password_confirmation">
+        <input type="submit" name="submit" value="Sign up!">
+      </fieldset>
+    </form>
+
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
