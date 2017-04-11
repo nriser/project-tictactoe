@@ -1,5 +1,7 @@
 'use strict'
 
+// document.getElementById('board').style.visibility = 'hidden'
+
 // To Do:
   // scoreboard
   // let score = {'X': 0, 'O': 0};
@@ -92,9 +94,6 @@ const displayMessage = function () {
 
 // when using two for loops in one, must have the same loop cycles
 
-// Store reset button into a variable
-const reset = document.getElementById('reset')
-
 // Make board empty to reset game
 const resetGame = function () {
   for (let i = 0; i < 9; i++) {
@@ -112,13 +111,28 @@ const resetGame = function () {
     drawMessage.textContent = null
     // reset player input array
     playerInput = []
+    // document.getElementById('board').style.visibility = 'visible'
   }
 }
 
-// Add click event to reset button
-// reset.addEventListener('click', resetGame);
-$(reset).on('click', resetGame)
+// const boxHide = function () {
+//   $('#box').hide()
+// }
+// Store reset button into a variable
+// const reset = document.getElementById('reset')
+
+// $(reset).on('click', resetGame)
+// boxHide()
+
+const addHandlers = () => {
+  $('#reset').on('click', resetGame)
+  // $('#box').on('load', boxHide)
+}
 
 module.exports = {
-
+  displayInput,
+  displayMessage,
+  resetGame,
+  // boxHide,
+  addHandlers
 }

@@ -4,6 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
+// const board = require('../board')
 
 const onSignUp = function (event) {
   const data = getFormFields(this) // this will refer to event.target because it gets passed into addHandlers as a callback.
@@ -14,9 +15,10 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) { // stop here , add console to check if code is working so far
-  //console.log("on sign in ran!!!!!")
+  // console.log("on sign in ran!!!!!")
   const data = getFormFields(this)
   event.preventDefault()
+  $('#board').show()
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -36,6 +38,7 @@ const onSignOut = function (event) {
   console.log('on sign out fired!')
   event.preventDefault()
 
+  $('#board').hide()
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
@@ -43,6 +46,7 @@ const onSignOut = function (event) {
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp) // when browser hears on submit event on #sign-up element, it'll run pass in onSignup into it as a calllback and runs it
+  // $(board.reset).on('click', board.resetGame)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
