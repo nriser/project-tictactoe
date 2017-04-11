@@ -14,6 +14,7 @@ const signInSuccess = (response) => { // argument can be (response) or something
   console.log(response)
   // because i know that i'll need that token again later, i'll store it somewhere
   store.user = response.user // response.user is the email id and token // stores whatever that was in that response
+  .css
 }
 
 const signInFailure = (error) => {
