@@ -29,6 +29,8 @@ const displayInput = function() {
   playerInput.push(this.textContent);
   // Disable button once user clicks on a box
   this.disabled = true;
+  // run function that display win/draw message
+  displayMessage();
   // reverse X/O input
   xoSymbols.reverse();
 }
@@ -38,6 +40,17 @@ for (let i = 0; i < 9; i++) {
   // boxArray[i].addEventListener("click", displayInput);
   $(boxArray[i]).on("click", displayInput);
 }
+
+// Note: addEventListner can be used only on ONE element at a time
+
+// Win/draw messages
+// Create text element for Player X win
+let xWinMessage = document.createElement('p');
+// Create text element for Player O win
+let oWinMessage = document.createElement('p');
+// Create text element for draw
+let drawMessage = document.createElement('p');
+
 
 module.exports = {
 
