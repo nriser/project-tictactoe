@@ -52,6 +52,49 @@ let oWinMessage = document.createElement('p');
 let drawMessage = document.createElement('p');
 
 
+// When certain combination achieved, display win/draw message
+const displayMessage = function() {
+  // If any of the winning combinations achieved for X, display win
+  for (let i = 0; i < 3; i++) {
+    if (
+      // 0, 1, 2 -> 3, 4, 5 -> 6, 7, 8
+      boxArray[i*3].textContent === playerInput[0] && boxArray[(i*3)+1].textContent === playerInput[0] && boxArray[(i*3)+2].textContent === playerInput[0] ||
+      // 0, 3, 6 -> 1, 4, 7 -> 2, 5, 8
+      boxArray[i].textContent === playerInput[0] && boxArray[i+3].textContent === playerInput[0] && boxArray[i+6].textContent === playerInput[0] ||
+      // 0, 4, 8 -> 1, 4, 7 (redundant) --> 2, 4, 6
+      boxArray[i].textContent === playerInput[0] && boxArray[4].textContent === playerInput[0] && boxArray[8-i].textContent === playerInput[0]) {
+      xWinMessage.textContent = "X wins!";
+      document.getElementById('message').appendChild(xWinMessage);
+      for (let i = 0; i < 9; i++) {
+        boxArray[i].disabled = true;
+      }
+    } else if (
+      boxArray[i*3].textContent === playerInput[1] && boxArray[(i*3)+1].textContent === playerInput[1] && boxArray[(i*3)+2].textContent === playerInput[1] ||
+      boxArray[i].textContent === playerInput[1] && boxArray[i+3].textContent === playerInput[1] && boxArray[i+6].textContent === playerInput[1] ||
+      boxArray[i].textContent === playerInput[1] && boxArray[4].textContent === playerInput[1] && boxArray[8-i].textContent === playerInput[1]) {
+      oWinMessage.textContent = "O wins!";
+      document.getElementById('message').appendChild(oWinMessage);
+      for (let i = 0; i < 9; i++) {
+        boxArray[i].disabled = true;
+      }
+    }
+  }
+  // make a callback function
+   if (playerInput.length === 9 && oWinMessage.textContent === "" && xWinMessage.textContent === "") { // If 9 inputs or more, display draw message
+    // Create text element for draw
+    drawMessage.textContent = "Draw!";
+    // Append text element to div#message
+    document.getElementById('message').appendChild(drawMessage);
+    // disable all buttons when any of the win combinations are met
+    for (let i = 0; i < 9; i++) {
+      boxArray[i].disabled = true;
+    }
+  }
+}
+
+// when using two for loops in one, must have the same loop cycles
+
+
 module.exports = {
 
 }
