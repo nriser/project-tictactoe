@@ -9,3 +9,5 @@ curl --include --request PATCH http://localhost:4741/change-password/$ID \
       "new": "hi"
     }
   }'
+
+echo

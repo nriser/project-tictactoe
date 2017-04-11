@@ -8,3 +8,5 @@ curl --include --request POST http://localhost:4741/sign-in \
       "password": "an example password"
     }
   }'
+
+echo
