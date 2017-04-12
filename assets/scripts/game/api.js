@@ -7,7 +7,7 @@ const createGame = function () {
   console.log('create game request')
   return $.ajax({
     method: 'POST',
-    url: config.apiOrigin + '/games/',
+    url: config.apiOrigin + '/games',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -37,7 +37,22 @@ const updateGame = function (index, value) {
   })
 }
 
+const getGames = function () {
+  // console.log('keep track of the game')
+  console.log('api.js getGames function game and user objects', store) // game and user objects
+  // console.log('game', store.game) // game object
+  // console.log('game id', store.game.id) // game id
+  return $.ajax({
+    method: 'GET',
+    url: config.apiOrigin + '/games',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createGame,
-  updateGame
+  updateGame,
+  getGames
 }
