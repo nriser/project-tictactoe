@@ -15,6 +15,15 @@ const onCreateGame = function () {
     .catch(ui.createGameFailure)
 }
 
+// const onUpdateGame = function () {
+//   console.log('on update game ran!!!!!')
+//   event.preventDefault()
+//   // $('#board').show()
+//   api.updateGame()
+//     .then(ui.updateGameSuccess)
+//     .catch(ui.updateGameFailure)
+// }
+
 const addGameHandlers = () => {
   $('#create-game').on('submit', onCreateGame) // when browser hears on submit event on
 }

@@ -1,5 +1,6 @@
 'use strict'
 
+
 // document.getElementById('board').style.visibility = 'hidden'
 
 // To Do:
@@ -34,6 +35,17 @@ const displayInput = function () {
   displayMessage()
   // reverse X/O input
   xoSymbols.reverse()
+  updateCurrentGame(2, 'o')
+}
+
+const api = require('./game/api.js')
+const ui = require('./game/ui.js')
+
+const updateCurrentGame = function (index, value) {
+  console.log('updateCurrentGame function')
+  api.updateGame(index, value)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
 }
 
 // Add click event to each box
