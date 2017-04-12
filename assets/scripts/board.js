@@ -95,7 +95,7 @@ const displayMessage = function () {
 // when using two for loops in one, must have the same loop cycles
 
 // Make board empty to reset game
-const resetGame = function () {
+const createGame = function () {
   for (let i = 0; i < 9; i++) {
     // Remove X/O input from each box
     boxArray[i].textContent = null
@@ -124,15 +124,15 @@ const resetGame = function () {
 // $(reset).on('click', resetGame)
 // boxHide()
 
-const addHandlers = () => {
-  $('#reset').on('click', resetGame)
+const addBoardHandlers = () => {
+  $('#create-game').on('click', createGame)
   // $('#box').on('load', boxHide)
 }
 
 module.exports = {
   displayInput,
   displayMessage,
-  resetGame,
+  createGame,
   // boxHide,
-  addHandlers
+  addBoardHandlers
 }
