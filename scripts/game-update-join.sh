@@ -4,7 +4,7 @@ curl --include --request PATCH http://localhost:4741/games/$ID \
   --data ''
 
   # in terminal,
-  # $ ID=1 TOKEN=BAhJIiViN2Q5MmFhOWMyZjE0MzcyYzE3YzczODM4ZTMwNGIwYgY6BkVG--9ced37c6df0475283dc4f19cb758c07fb04848f3 sh scripts/game-update.sh
+  # ID=1  TOKEN=BAhJIiViYTM4NTU0ZTIxOGE4ZTQ2ZWU0YWZhNDdiMmY2MmVkZgY6BkVG--b0efad771cd2c35ad8fe6f4b06e11584bba143de sh scripts/game-update-delta.sh
 
 
   echo

@@ -7,7 +7,7 @@ curl --include --request POST http://localhost:4741/games \
   echo
 
 # in terminal,
-# $ ID=17 TOKEN=BAhJIiU2ZTU2MDk0ODdlNjk1YzBiYzZhMmZhMGY2ZTBiMzliNwY6BkVG--ec9df4e4b86d4fa7d2a860257dbeaa0d01d57aa0 sh scripts/game-create.sh
+# $ ID=17 (yo) TOKEN=BAhJIiU2ZTU2MDk0ODdlNjk1YzBiYzZhMmZhMGY2ZTBiMzliNwY6BkVG--ec9df4e4b86d4fa7d2a860257dbeaa0d01d57aa0 sh scripts/game-create.sh
 # but be sure to sign up/sign in and use that token to create a new game for that new user
 
   # #!/bin/bash
