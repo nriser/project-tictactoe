@@ -45,10 +45,22 @@ const signOut = (data) => {
   })
 }
 
+const createGame = function () {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiOrigin + '/games/',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {}
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createGame
 }
 // doesn't have to be arrows
