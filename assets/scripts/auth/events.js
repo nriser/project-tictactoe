@@ -8,6 +8,13 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   const data = getFormFields(this) // this will refer to event.target because it gets passed into addHandlers as a callback.
+  // $('#sign-in').hide()
+  // $('#create-game').hide()
+  // $('#sign-out').hide()
+  // $('#change-password').hide()
+  // $('#create-game').hide()
+  // $('#get-games').hide()
+  // $('#get-game').hide()
   event.preventDefault()
   api.signUp(data) // check the api.js file to see. When successful, show signUpSucess message, otherwise, signUpFailure message
     .then(ui.signUpSuccess)
@@ -16,9 +23,15 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) { // stop here , add console to check if code is working so far
   // console.log("on sign in ran!!!!!")
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#change-password').hide()
+  $('#sign-out').fadeIn()
+  $('#create-game').show()
+  $('#get-games').fadeIn()
+  $('#get-game').fadeIn()
   const data = getFormFields(this)
   event.preventDefault()
-  $('#board').show()
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -37,8 +50,11 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   console.log('on sign out fired!')
   event.preventDefault()
-
   $('#board').hide()
+  $('#get-games').hide()
+  $('#get-game').hide()
+  $('#create-game').hide()
+  $('#sign-in').fadeIn()
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)

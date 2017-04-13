@@ -9,7 +9,7 @@ const ui = require('./ui')
 const onCreateGame = function () {
   console.log('on create game ran!!!!!')
   event.preventDefault()
-  // $('#board').show()
+  $('#board').fadeIn()
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
