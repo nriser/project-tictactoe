@@ -1,7 +1,7 @@
 'use strict'
 
 // document.getElementById('board').style.visibility = 'hidden'
-$('#board').hide()
+// $('#board').hide()
 // To Do:
   // scoreboard
   // let score = {'X': 0, 'O': 0};

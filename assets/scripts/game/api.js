@@ -15,7 +15,7 @@ const createGame = function () {
   })
 }
 
-const updateGame = function (index, value) {
+const updateGame = function (index, value, over) {
   // console.log('keep track of the game')
   console.log('api.js updateGame function game and user objects', store) // game and user objects
   // console.log('game', store.game) // game object
@@ -31,7 +31,8 @@ const updateGame = function (index, value) {
         'cell': {
           'index': index,
           'value': value
-        }
+        },
+        'over': over
       }
     }
   })

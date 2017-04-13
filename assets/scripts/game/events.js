@@ -9,7 +9,6 @@ const ui = require('./ui')
 const onCreateGame = function () {
   console.log('on create game ran!!!!!')
   event.preventDefault()
-  $('#board').fadeIn()
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
@@ -18,7 +17,6 @@ const onCreateGame = function () {
 const onGetGames = function () {
   console.log('on get games ran!!!!!')
   event.preventDefault()
-  // $('#board').show()
   api.getGames()
     .then(ui.getGamesSuccess)
     .catch(ui.getGamesFailure)
@@ -28,7 +26,6 @@ const onGetGame = function (event) {
   console.log('on get game ran!!!!!')
   const data = getFormFields(this) // this will refer to event.target because it gets passed into addHandlers as a callback.
   event.preventDefault()
-  // $('#board').show()
   api.getGame(data)
     .then(ui.getGameSuccess)
     .catch(ui.getGameFailure)

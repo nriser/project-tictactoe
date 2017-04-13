@@ -1,15 +1,22 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-#board, #sign-out, #create-game, #get-games, #get-game {
-  display: none;
+#board, #change-password, #sign-out, #create-game, #get-games, #get-game {
+  visibility: hidden;
 }
 
 .board {
+  background-color: blue;
   height: 500px;
   margin: auto;
   outline: 1px solid red;
   width: 500px;
+}
+
+.message {
+  // border: 3px solid blue;
+  height: 400px;
+  width: 100%;
 }
 
 .box {

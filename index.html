@@ -16,6 +16,9 @@
 <body class="container-fluid">
 
   <h1>Tic tac toe</h1>
+  <h3 id="status-message" class="status-message">Please sign up first. Have an account? Sign in.</h3>
+  <hr>
+
 
   <form id="sign-up">
     <fieldset>
@@ -74,31 +77,25 @@
 
 
   <form id="get-game" class="get-game">
-  <fieldset>
-    <legend>View a game</legend>
-    <input type="submit" name="submit" value="View a game">
-    <input type="text" name="game[id]" id="game-id" placeholder="Game ID Here">
-  </fieldset>
-</form>
+    <fieldset>
+      <legend>View a game</legend>
+      <input type="submit" name="submit" value="View a game">
+      <input type="text" name="game[id]" id="game-id" placeholder="Game ID Here">
+    </fieldset>
+  </form>
 
   <div id="show-game-container" class="show-game-container"></div>
-  <!-- <form id="update-game">
-    <fieldset>
-      <legend>Create new game</legend>
-      <input type="submit" name="submit" value="Create new game">
-    </fieldset>
-  </form> -->
 
   <div id="board" class="board">
-  <button id="box0" class="box row-one column-one one" name="game[cell]"></button>
-  <button id="box1" class="box row-one column-two two"></button>
-  <button id="box2" class="box row-one column-three three"></button>
-  <button id="box3" class="box row-two column-one four"></button>
-  <button id="box4" class="box row-two column-two five"></button>
-  <button id="box5" class="box row-two column-three six"></button>
-  <button id="box6" class="box row-three column-one seven"></button>
-  <button id="box7" class="box row-three column-two eight"></button>
-  <button id="box8" class="box row-three column-three nine"></button>
+    <button id="box0" class="box row-one column-one one" name="game[cell]"></button>
+    <button id="box1" class="box row-one column-two two"></button>
+    <button id="box2" class="box row-one column-three three"></button>
+    <button id="box3" class="box row-two column-one four"></button>
+    <button id="box4" class="box row-two column-two five"></button>
+    <button id="box5" class="box row-two column-three six"></button>
+    <button id="box6" class="box row-three column-one seven"></button>
+    <button id="box7" class="box row-three column-two eight"></button>
+    <button id="box8" class="box row-three column-three nine"></button>
   </div>
 
   <div id="message" class="message"></div>
