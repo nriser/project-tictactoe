@@ -14,7 +14,7 @@ const signUpSuccess = (response) => { // argument can be (response) or something
 
 const signUpFailure = (error) => {
   console.error(error)
-  $('.status-message').text('Email already exists. Please sign in.')
+  $('.status-message').text('Something went wrong. Please try again.')
 }
 
 const signInSuccess = (response) => { // argument can be (response) or something too. Just an argument name
@@ -57,6 +57,9 @@ const signOutSuccess = () => {
   $('#sign-up').css('visibility', 'visible')
   $('#get-games').css('visibility', 'hidden')
   $('#get-game').css('visibility', 'hidden')
+  $('#show-games-container').hide()
+  $('#show-game-container').hide()
+  $('#board').css('visibility', 'hidden')
   store.user = null // only have one person signed in in a givne session, one browser
 }
 
