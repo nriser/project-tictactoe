@@ -7,8 +7,8 @@ const board = require('../board.js')
 
 const signUpSuccess = (response) => { // argument can be (response) or something too. Just an argument name
   console.log(response)
-  $('#sign-up').css('visibility', 'hidden')
-  $('#sign-in').css('visibility', 'visible')
+  $('#sign-up').hide()
+  $('#sign-in').fadeIn()
   $('.status-message').text('You have successfully signed up! Please sign in.')
 }
 
@@ -20,13 +20,13 @@ const signUpFailure = (error) => {
 const signInSuccess = (response) => { // argument can be (response) or something too. Just an argument name
   console.log(response)
   // because i know that i'll need that token again later, i'll store it somewhere
-  $('#change-password').css('visibility', 'visible')
-  $('#create-game').css('visibility', 'visible')
-  $('#sign-out').css('visibility', 'visible')
-  $('#sign-in').css('visibility', 'hidden')
-  $('#sign-up').css('visibility', 'hidden')
-  $('#get-game').css('visibility', 'visible')
-  $('#get-games').css('visibility', 'visible')
+  $('#change-password').fadeIn()
+  $('#create-game').fadeIn()
+  $('#sign-out').fadeIn()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#get-game').fadeIn()
+  $('#get-games').fadeIn()
 
 
   store.user = response.user // response.user is the email id and token // stores whatever that was in that response
@@ -51,16 +51,16 @@ const changePasswordFailure = (error) => {
 const signOutSuccess = () => {
   console.log('signOut success ran. and nothing was returned')
   $('.status-message').text('You have successfully signed out!')
-  $('#change-password').css('visibility', 'hidden')
-  $('#create-game').css('visibility', 'hidden')
-  $('#sign-out').css('visibility', 'hidden')
-  $('#sign-in').css('visibility', 'visible')
-  $('#sign-up').css('visibility', 'visible')
-  $('#get-games').css('visibility', 'hidden')
-  $('#get-game').css('visibility', 'hidden')
-  $('#show-games-container').css('visibility', 'hidden')
-  $('#show-game-container').css('visibility', 'hidden')
-  $('#board').css('visibility', 'hidden')
+  $('#change-password').hide()
+  $('#create-game').hide()
+  $('#sign-out').hide()
+  $('#sign-in').fadeIn()
+  $('#sign-up').fadeIn()
+  $('#get-games').hide()
+  $('#get-game').hide()
+  $('#show-games-container').hide()
+  $('#show-game-container').hide()
+  $('#board').hide()
   store.user = null // only have one person signed in in a givne session, one browser
 }
 

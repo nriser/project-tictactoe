@@ -4,13 +4,16 @@ const store = require('../store.js')
 
 const createGameSuccess = (response) => {
   store.game = response.game
-  $('#show-game-container').css('visibility', 'hidden')
-  $('#show-games-container').css('visibility', 'hidden')
+  $('#show-game-container').hide()
+  $('#show-games-container').hide()
+  // $('#show-game-container').css('visibility', 'hidden')
+  // $('#show-games-container').css('visibility', 'hidden')
   console.log('game created successfully!')
   console.log('Game object is: ', response) // Object {game: Object}, individual game
   $('.status-message').text('You are playing TicTacToe with Game ID: ' + store.game.id)
   console.log('game is stored as: ', store.game)
-  $('#board').css('visibility', 'visible')
+  $('#board').fadeIn()
+  // $('#board').css('visibility', 'visible')
 }
 
 const createGameFailure = () => {
@@ -40,7 +43,8 @@ const returnResults = (response) => {
 }
 
 const getGamesSuccess = (response) => {
-  $('#show-games-container').css('visibility', 'visible')
+  $('#show-games-container').fadeIn()
+  // $('#show-games-container').css('visibility', 'visible')
   console.log('got all games: ', response.games) // Object {games: Array(56)}
   let totalWins = 0
   for (let j = 0; j < response.games.length; j++) {
@@ -70,12 +74,14 @@ const getGamesSuccess = (response) => {
 }
 
 const getGamesFailure = () => {
-  $('#show-games-container').css('visibility', 'visible')
+  $('#show-games-container').fadeIn()
+  // $('#show-games-container').css('visibility', 'visible')
   $('#show-games-container').text('You have not played any games yet.')
 }
 
 const getGameSuccess = (response) => {
-  $('#show-game-container').css('visibility', 'visible')
+  $('#show-game-container').fadeIn()
+  // $('#show-game-container').css('visibility', 'visible')
   const currentBoard = response.game.cells
   for (let i = 0; i < currentBoard.length; i++) {
     if (currentBoard[i] === '') {
@@ -86,7 +92,8 @@ const getGameSuccess = (response) => {
 }
 
 const getGameFailure = () => {
-  $('#show-game-container').css('visibility', 'visible')
+  $('#show-game-container').fadeIn()
+  // $('#show-game-container').css('visibility', 'visible')
   $('#show-game-container').text('Please provide a valid ID for a previously played game.')
 }
 
