@@ -1,4 +1,4 @@
-git# TicTacToe game built by Nikki Riser
+# TicTacToe game built by Nikki Riser
 
 Link to the game: https://nriser.github.io/project-tictactoe/
 
