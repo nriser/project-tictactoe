@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+  <header>
+    <h1 class="text-align-center">Tic Tac Toe</h1>
+
+    <form id="sign-out" class="sign-out text-align-center">
+      <fieldset>
+        <input type="submit" name="submit" value="Sign out">
+      </fieldset>
+    </form>
+
+  </header>
+
+  <h3 id="status-message" class="status-message text-align-center">Please sign up. Have an account? Sign in.</h3>
+  <hr>
+
+  <section class="content-container">
+    <form id="create-game" class="create-game text-align-center">
+      <fieldset>
+        <input type="submit" name="submit" value="Create new game">
+      </fieldset>
+    </form>
+
+    <div class="container-sign">
+      <form id="sign-up" class="text-align-center">
+        <fieldset>
+          <legend>Sign up</legend>
+          <input type="text" name="credentials[email]" placeholder="email">
+          <!-- name matters. Our object is made to look like what we see in sign-uo.sh  -->
+          <input type="password" name="credentials[password]" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="password_confirmation">
+          <input type="submit" name="submit" value="Sign up">
+        </fieldset>
+      </form>
+
+      <form id="sign-in" class="text-align-center">
+        <fieldset>
+          <legend>Sign in</legend>
+          <input type="text" name="credentials[email]" placeholder="email">
+          <!-- [email] is the key of credentials object. name matters. Our object is made to look like what we see in sign-uo.sh  -->
+          <input type="password" name="credentials[password]" placeholder="password">
+          <input type="submit" name="submit" value="Sign in">
+        </fieldset>
+      </form>
+    </div>
+
+    <div id="board" class="board">
+      <div id="message" class="message"></div>
+
+      <button id="box0" class="box row-one column-one one" name="game[cell]"></button>
+      <button id="box1" class="box row-one column-two two"></button>
+      <button id="box2" class="box row-one column-three three"></button>
+      <button id="box3" class="box row-two column-one four"></button>
+      <button id="box4" class="box row-two column-two five"></button>
+      <button id="box5" class="box row-two column-three six"></button>
+      <button id="box6" class="box row-three column-one seven"></button>
+      <button id="box7" class="box row-three column-two eight"></button>
+      <button id="box8" class="box row-three column-three nine"></button>
+    </div>
+
+    <form id="change-password" class="change-password text-align-center">
+      <fieldset>
+        <legend>Change password</legend>
+        <input type="password" name="passwords[old]" placeholder="old password">
+        <!-- [email] is the key of credentials object. name matters. Our object is made to look like what we see in sign-uo.sh  -->
+        <input type="password" name="passwords[new]" placeholder="new password">
+        <!-- what will our object look like at this point? see notes (1)-->
+        <input type="submit" name="submit" value="Change password">
+      </fieldset>
+    </form>
+
+    <aside class="view-score">
+      <div class="view-games">
+        <form id="get-games" class="get-games text-align-center">
+          <fieldset>
+            <input type="submit" name="submit" value="View past games">
+          </fieldset>
+        </form>
+
+        <div id="show-games-container" class="show-games-container"></div>
+
+
+        <form id="get-game" class="get-game text-align-center">
+          <fieldset>
+            <input type="submit" name="submit" value="View a game">
+            <input type="text" name="game[id]" id="game-id" placeholder="Enter Game ID">
+          </fieldset>
+        </form>
+      </div>
+    </aside>
+
+    <div id="show-game-container" class="show-game-container text-align-center"></div>
+
+  </section>
+
+
+
+  <!-- <button id="reset" class="reset">Reset</button> -->
+
+
+  <!-- <form class='create-book'>
+    <div class="form-group">
+      <input type="text" name="book[title]" placeholder="Title">
+      <input type="text" name="book[author]" placeholder="Author">
+    </div>
+    <button type="submit" class="btn btn-default">Create Book</button>
+  </form> -->
+
+
+</body>
+
+</html>
