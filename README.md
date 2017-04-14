@@ -17,7 +17,7 @@ I had the most trouble with accessing and utilizing the game API. Since I did no
 
 ## Unsolved problems:
 
-I would like to revisit this game and add more styling, as well as animations. I would also like to make a mobile-friendly page and allow player O to join the game.
+I would like to revisit this game and add more styling, as well as animations. I did not use Bootstrap this time, but plan to do so once I revisit. I would also like to make a mobile-friendly page and allow player O to join the game. 
 
 
 ## Wireframe:
