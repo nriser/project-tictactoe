@@ -14,7 +14,7 @@ const signUpSuccess = (response) => { // argument can be (response) or something
 
 const signUpFailure = (error) => {
   console.error(error)
-  $('.status-message').text('Something went wrong. Please try again.')
+  $('.status-message').text('Either email already exists or the passwords did not match. Please try again.')
 }
 
 const signInSuccess = (response) => { // argument can be (response) or something too. Just an argument name
@@ -28,13 +28,14 @@ const signInSuccess = (response) => { // argument can be (response) or something
   $('#get-game').css('visibility', 'visible')
   $('#get-games').css('visibility', 'visible')
 
+
   store.user = response.user // response.user is the email id and token // stores whatever that was in that response
   $('.status-message').text('You have successfully signed in! Create a new game to play!')
 }
 
 const signInFailure = (error) => {
   console.error(error)
-  $('.status-message').text('Please sign up first.')
+  $('.status-message').text('Wrong username and or password.')
 }
 
 const changePasswordSuccess = (response) => {
@@ -44,12 +45,12 @@ const changePasswordSuccess = (response) => {
 
 const changePasswordFailure = (error) => {
   console.error(error)
-  $('.status-message').text('Something went wrong. Are you signed in?')
+  $('.status-message').text('Incorrect password. Please try again.')
 }
 
 const signOutSuccess = () => {
   console.log('signOut success ran. and nothing was returned')
-  $('.status-message').text('You have successfully signend out!')
+  $('.status-message').text('You have successfully signed out!')
   $('#change-password').css('visibility', 'hidden')
   $('#create-game').css('visibility', 'hidden')
   $('#sign-out').css('visibility', 'hidden')
@@ -57,8 +58,8 @@ const signOutSuccess = () => {
   $('#sign-up').css('visibility', 'visible')
   $('#get-games').css('visibility', 'hidden')
   $('#get-game').css('visibility', 'hidden')
-  $('#show-games-container').hide()
-  $('#show-game-container').hide()
+  $('#show-games-container').css('visibility', 'hidden')
+  $('#show-game-container').css('visibility', 'hidden')
   $('#board').css('visibility', 'hidden')
   store.user = null // only have one person signed in in a givne session, one browser
 }

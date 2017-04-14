@@ -54,8 +54,8 @@ const getGames = function () {
 
 const getGame = function (data) {
   // console.log('keep track of the game')
-  console.log('api.js getGame function store', store) // game and user objects
-  console.log('api.js getGame function store.game', store.game)
+  // console.log('api.js getGame function store', store) // game and user objects
+  // console.log('api.js getGame function store.game', store.game)
   // console.log('game', store.game) // game object
   // console.log('game id', store.game.id) // game id
   return $.ajax({
