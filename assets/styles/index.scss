@@ -14,11 +14,6 @@ body {
   position: relative;
 }
 
-header {
-  // position: fixed;
-  // background-color: gray;
-}
-
 h1 {
   font-size: 3em;
   font-family: 'Ruda', sans-serif;
@@ -29,22 +24,12 @@ legend {
   color: #0190F6;
 }
 
-* {
-  // border: 1px solid green;
-}
-
-.view-score {
-  // border: 2px solid blue;
-  // width: 0;
-}
-
 .container-sign {
-  // border: 2px solid green;
   margin-top: 100px;
 }
 
 .text-align-center {
-    text-align: center;
+  text-align: center;
 }
 
 .status-message {
@@ -156,7 +141,6 @@ input[type="submit"]:hover {
 .change-password input {
   display: block;
   margin: 10px 0;
-  // width: 220px;
 }
 
 .content-container {
@@ -172,8 +156,6 @@ input[type="submit"]:hover {
   position: relative;
   height: 450px;
   margin: 100px auto 20px auto;
-  // border: none;
-  // outline: 1px solid red;
   width: 450px;
 }
 
@@ -186,7 +168,6 @@ input[type="submit"]:hover {
   height: 33.3%;
   line-height: 150px;
   margin: 0;
-  // outline: 1px solid blue;
   padding: 0;
   text-align: center;
   width: 33.3%;
@@ -220,7 +201,6 @@ input[type="submit"]:hover {
   -webkit-transform:rotate(-20deg); /* Safari and Chrome */
   top: 35%;
   width: 100%;
-	// transform: translate(0, -50%);
   margin: auto;
   color: #0190F6;
   font-weight: 700;
@@ -229,17 +209,15 @@ input[type="submit"]:hover {
   font-size: 7em;
   vertical-align: center;
   border-radius: 5px;
-  // background-color: rgba(1,144,246,.8);
   text-transform: uppercase;
 }
 
 .show-games-container, .show-game-container {
-  // border: 2px solid green;
   color: #0190F6;
-  // outline: 2px solid #0190F6;
   width: 100%;
   height: auto;
   font-family: monospace;
+  text-align: center;
 }
 
 .show-game-container {

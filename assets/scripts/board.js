@@ -1,15 +1,8 @@
 'use strict'
 
-// document.getElementById('board').style.visibility = 'hidden'
-// $('#board').hide()
-// To Do:
-  // scoreboard
-  // let score = {'X': 0, 'O': 0};
-
 // Array of X and O texts
 let xoSymbols = ['\u2613', '\u26AC']
 // reference; https://www.w3schools.com/charsets/tryit.asp?deci=9900 ; https://www.w3schools.com/charsets/ref_utf_symbols.asp
-// console.log(playerInput);
 
 // Empty array to store inputted Xs and Os
 let playerInput = []
@@ -42,7 +35,6 @@ const api = require('./game/api.js')
 const ui = require('./game/ui.js')
 
 const updateCurrentGame = function (index, value) {
-  console.log('updateCurrentGame function')
   api.updateGame(index, value)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
@@ -130,15 +122,6 @@ const createGame = function () {
     // document.getElementById('board').style.visibility = 'visible'
   }
 }
-
-// const boxHide = function () {
-//   $('#box').hide()
-// }
-// Store reset button into a variable
-// const reset = document.getElementById('reset')
-
-// $(reset).on('click', resetGame)
-// boxHide()
 
 const addBoardHandlers = () => {
   $('#create-game').on('click', createGame)
